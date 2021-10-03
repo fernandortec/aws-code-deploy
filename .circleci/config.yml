@@ -1,0 +1,13 @@
+version: 2.1
+orbs:
+     aws-code-deploy: circleci/aws-code-deploy@2.0.0
+     node: circleci/node@4.7.0
+workflows:
+  code-deploy-workflow:
+    jobs:
+      - aws-code-deploy/deploy:
+          application-name: CodeDeployDemo
+          bundle-bucket: aws-devops-course-fernandortec
+          bundle-key: myS3BucketKey
+          deployment-group: MyStagingInstances
+          service-role-arn: arn:aws:iam::344541435744:role/CodeDeployRole
