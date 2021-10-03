@@ -8,6 +8,6 @@ workflows:
       - aws-code-deploy/deploy:
           application-name: CodeDeployDemo
           bundle-bucket: aws-devops-course-fernandortec
-          bundle-key: myS3BucketKey
+          bundle-key: codedeploy-demo/
           deployment-group: MyStagingInstances
           service-role-arn: arn:aws:iam::344541435744:role/CodeDeployRole
