@@ -12,6 +12,6 @@ workflows:
             branches:
               only:
                 - master
-          label: version-<<pipeline.number>>
+          label: version-<<Sample Application>>
           requires:
             - node/test
