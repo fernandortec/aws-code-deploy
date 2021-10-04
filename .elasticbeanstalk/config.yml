@@ -1,0 +1,8 @@
+branch-defaults:
+  master:
+    environment: nodejs-eb-staging
+global:
+  application_name: nodejs-eb
+  default_platform: node
+  default_region: us-east-1
+  sc: git
