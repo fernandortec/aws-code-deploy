@@ -5,14 +5,11 @@ orbs:
 workflows:
   elastic-beanstalk-workflow:
     jobs:
-      - node/test
       - eb/deploy:
           context: aws-creds
-          environment-name: my-app
+          environment-name: nodejs-eb-staging
           filters:
             branches:
               only:
                 - main
           label: version-<<pipeline.number>>
-          requires:
-            - node/test
