@@ -7,7 +7,7 @@ workflows:
     jobs:
       - node/test
       - eb/deploy:
-          context: aws-creds
+          context: aws
           environment-name: nodejs-eb-staging
           filters:
             branches:
