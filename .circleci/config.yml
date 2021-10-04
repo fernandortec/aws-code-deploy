@@ -8,7 +8,6 @@ workflows:
       - node/test
       - eb/deploy:
           context: aws-creds
-          application-name: nodejs-eb
           environment-name: nodejs-eb-staging
           filters:
             branches:
