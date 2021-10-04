@@ -10,7 +10,8 @@ jobs:
       - eb/setup
       - run:
           command: |
-            eb deploy nodejs-eb-staging --debug
+            eb use nodejs-eb-staging--profile default
+            eb deploy --debug
             eb status
           name: You may now use the EB CLI within this job
 workflows:
