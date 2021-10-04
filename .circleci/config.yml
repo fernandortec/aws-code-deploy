@@ -5,6 +5,7 @@ orbs:
 workflows:
   elastic-beanstalk-workflow:
     jobs:
+      - node/test
       - eb/deploy:
           context: aws-creds
           environment-name: nodejs-eb-staging
@@ -13,3 +14,5 @@ workflows:
               only:
                 - main
           label: version-<<pipeline.number>>
+          requires:
+            - node/test
