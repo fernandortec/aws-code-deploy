@@ -1,13 +1,18 @@
 version: 2.1
 orbs:
-     aws-code-deploy: circleci/aws-code-deploy@2.0.0
-     node: circleci/node@4.7.0
+  eb: circleci/aws-elastic-beanstalk@1.0.0
+  node: circleci/node@4.1.0
 workflows:
-  code-deploy-workflow:
+  elastic-beanstalk-workflow:
     jobs:
-      - aws-code-deploy/deploy:
-          application-name: CodeDeployDemo
-          bundle-bucket: aws-devops-course-fernandortec
-          bundle-key: codedeploy-demo/app
-          deployment-group: MyStagingInstances
-          service-role-arn: arn:aws:iam::344541435744:role/CodeDeployRole
+      - node/test
+      - eb/deploy:
+          context: aws-creds
+          environment-name: nodejs-eb-staging
+          filters:
+            branches:
+              only:
+                - main
+          label: version-<<pipeline.number>>
+          requires:
+            - node/test
