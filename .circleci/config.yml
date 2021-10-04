@@ -6,20 +6,9 @@ workflows:
   elastic-beanstalk-workflow:
     jobs:
       - node/test
-      - node/install-packages:
-          pkg-manager: yarn
-      - run:
-          name: Install dependencies
-          command: yarn install
-      - run:
-          name: Build
-          command: yarn build
-      - run:
-          name: Run tests
-          command: yarn test
       - eb/deploy:
           context: aws-creds
-          environment-name: nodejs-eb-staging
+          environment-name: my-app
           filters:
             branches:
               only:
