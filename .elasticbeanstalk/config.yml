@@ -1,6 +1,6 @@
 branch-defaults:
   master:
-    environment: nodejs-eb-staging
+    environment: nodejs-eb-staging-v2
 global:
   application_name: nodejs-eb
   default_platform: node
