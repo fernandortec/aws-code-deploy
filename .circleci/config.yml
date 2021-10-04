@@ -12,6 +12,5 @@ workflows:
             branches:
               only:
                 - master
-          label: version-<<Sample Application>>
           requires:
             - node/test
