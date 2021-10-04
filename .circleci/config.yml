@@ -5,7 +5,6 @@ orbs:
 workflows:
   elastic-beanstalk-workflow:
     jobs:
-      - node/test
       - eb/deploy:
           environment-name: nodejs-eb-staging
           filters:
